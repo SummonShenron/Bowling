@@ -16,3 +16,22 @@ def test_spare():
 def test_strike():
     rolls = [10, 3, 4] + [0] * 16
     assert calculate_score(rolls) == 24
+
+def test_perfect_game():
+    rolls = [10] * 12
+    assert calculate_score(rolls) == 300   
+
+def test_gutter_game():
+    # all zeros
+    rolls = [0] * 20
+    assert calculate_score(rolls) == 0
+
+def test_turkey_three_consecutive_strikes():  
+    # Three strikes in a row 
+    rolls = [10, 10, 10] + [0] * 14
+    assert calculate_score(rolls) == 60     
+
+def test_tenth_frame_spare_with_strike_bonus(): 
+    # spare in the 10th frame,
+    rolls = [0] * 18 + [5, 5, 10]
+    assert calculate_score(rolls) == 20    
