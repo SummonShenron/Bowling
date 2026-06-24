@@ -26,12 +26,12 @@ def test_gutter_game():
     rolls = [0] * 20
     assert calculate_score(rolls) == 0
 
-def test_turkey_three_consecutive_strikes():  
+def test_turkey_three_strikes():  
     # Three strikes in a row 
     rolls = [10, 10, 10] + [0] * 14
     assert calculate_score(rolls) == 60     
 
-def test_tenth_frame_spare_with_strike_bonus(): 
+def test_tenth_frame_spare_with_strike(): 
     # spare in the 10th frame,
     rolls = [0] * 18 + [5, 5, 10]
     assert calculate_score(rolls) == 20    

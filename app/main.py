@@ -53,7 +53,7 @@ def bowling():
             roll = random.randint(0, 10 - roll_scores[- 1])
             print(f"i cant believe you managed to knock down another {roll} pins!")
             roll_scores.append(roll)
-        # score = calculate_score(roll_scores)
+        score = calculate_score(roll_scores)
         print(f"frame {frame} / 10 score: {score}")
     if frame in range(10): 
         tenth_roll_1 = input("press enter to roll your last round")
@@ -76,7 +76,8 @@ def bowling():
                 tenth_roll_3 = random.randint(0, 10 - roll_scores[- 1])
                 print(f"congrats you hit {tenth_roll_3} pins")
                 roll_scores.append(tenth_roll_3)
-    score = calculate_score(roll_scores)            
+    score = calculate_score(roll_scores)  
+    print(f"you should be impressed, you got {score} points.")          
             
 if __name__ == "__main__":
     print(greet("World"))
